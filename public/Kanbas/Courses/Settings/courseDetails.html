@@ -1,0 +1,141 @@
+<table>
+  <tr>
+    <td valign="top">
+      <ul>
+        <li><a href="/public//Kanbas/Account/Profile/screen.html">Account</a></li>
+        <li><a href="/public/Kanbas/Dashboard/screen.html">Dashboard</a></li>
+        <li><a href="/public/Kanbas/Courses/CourseNavigation/index.html">Courses</a></li>
+        <li><a href="/Kanbas/Calender/screen.html">Calender</a></li>
+        <li><a href="/Kanbas/Inbox/screen.html">Inbox</a></li>
+        <li><a href="/Kanbas/History/screen.html">History</a></li>
+        <li><a href="/Kanbas/Studio/screen.html">Studio</a></li>
+        <li><a href="/Kanbas/Commons/screen.html">Commons</a></li>
+        <li><a href="/Kanbas/Help/screen.html">Help</a></li>
+      </ul>
+    </td>
+    <td valign="top"><ul>
+      <li><a href="/public/Kanbas/Courses/Home/screen.html">Home</a></li>
+      <li><a href="/public/Kanbas/Courses/Modules/index.html">Modules</a></li>
+      <li><a href="/public/Kanbas/Courses/Piazza/screen.html">Piazza</a></li>
+      <li><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/screen.html">Assignments</a></li>
+      <li><a href="/public/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
+      <li><a href="/public//Kanbas/Courses/Grades/screen.html">Grades</a></li>
+      <li><a href="/public//Kanbas/Courses/People/screen.html">People</a></li>
+      <li><a href="/public/Kanbas/Courses/Panopto Video/screen.html">Panopto Video</a></li>
+      <li><a href="/public/Kanbas/Courses/Discussions/screen.html">Discussions</a></li>
+      <li><a href="/public/Kanbas/Courses/Announcements/screen.html">Announcements</a></li>
+      <li><a href="/public//Kanbas/Courses/Pages/screen.html">Pages</a></li>
+      <li><a href="/public//Kanbas/Courses/Files/screen.html">Files</a></li>
+      <li><a href="/public//Kanbas/Courses/Rubrics/screen.html">Rubrics</a></li>
+      <li><a href="/public//Kanbas/Courses/Outcomes/screen.html">Outcomes</a></li>
+      <li><a href="/public//Kanbas/Courses/Collaborations/screen.html">Collaborations</a></li>
+      <li><a href="/public//Kanbas/Courses/Syllabus/screen.html">Syllabus</a></li>
+      <li><a href="/public//Kanbas/Courses/Settings/screen.html">Settings</a></li>
+    </ul></td>
+    <td id="secondColumn" valign="top">
+      <h2>Course Details</h2>
+      <table cellspacing="0" cellpadding="5" style="border-collapse: collapse;">
+        <tr>
+          <td style="border: none;">
+            <h5>Image:</h5>
+          </td>
+          <td style="border: none;">
+            <form action="/upload_endpoint" method="post" enctype="multipart/form-data">
+              <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*">
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td style="border: none;">
+            <h5>Name:</h5>
+          </td>
+          <td style="border: none;">
+            CS4550 12631 Web Development SEC 01 Fall 2023 [BOS-1-TR]
+          </td>
+        </tr>
+        <tr>
+          <td style="border: none;">
+            <h5>Course Code:</h5>
+          </td>
+          <td style="border: none;">
+            CS4550.12631.202410
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border: none;">
+            <h5>Blueprint Course:</h5>
+          </td>
+          <td style="border: none;">
+            No
+          </td>
+        </tr>
+    
+        <tr>
+          <td style="border: none;">
+            <h5>Course Template:</h5>
+          </td>
+          <td style="border: none;">
+            <form>
+              <label>
+                <input type="checkbox" name="templateChoice" value="template1"> Enable course as a Course Template
+              </label>
+            </form>
+          </td>
+        </tr>
+    
+        <tr>
+          <td style="border: none;">
+            <h5>Time Zone:</h5>
+          </td>
+          <td style="border: none;">
+            <label for="timezone">Choose a time zone:</label>
+            <select id="timezone" name="timezone">
+              <option value="EST">Eastern Time(US & Canada)(-05:00/-04:00)</option>
+            </select>
+          </td>
+        </tr>
+    
+        <tr>
+          <td style="border: none;">
+            <h5>SIS ID:</h5>
+          </td>
+          <td style="border: none;">
+            CS4550.12631.202410
+          </td>
+        </tr>
+    
+        <tr>
+          <td style="border: none;">
+            <h5>Subaccount:</h5>
+          </td>
+          <td style="border: none;">
+            <a href="#">CS Undergrad</a>
+          </td>
+        </tr>
+    
+        <tr>
+          <td style="border: none;">
+            <h5>Term:</h5>
+          </td>
+          <td style="border: none;">
+            <div>202410_1 Fall 2023 Semester Full Term</div>
+          </td>
+        </tr>
+    
+        <tr>
+          <td style="border: none;">
+            <h5>Participation:</h5>
+          </td>
+          <td style="border: none;">
+            <select id="term" name="term">
+              <option value="Term">Term</option>
+            </select>
+            <div>Course participation is limited to <b>term</b> start and end dates.</div>
+            <h4>Start</h4>
+            <input type="date" id="text-fields-dob" /><br />
+            <h4>End</h4>
+            <input type="date" id="text-fields-dob" /><br />
+          </td>
+        </tr>
+    </td>

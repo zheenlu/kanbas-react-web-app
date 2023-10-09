@@ -1,0 +1,17 @@
+.wd-profile .user-image .fa.fa-user-circle {
+  font-size: 8em;
+}
+
+.wd-profile a {
+  color: red;
+  text-decoration: none;
+}
+/* .wd-profile form.right-bottom {
+  margin-left: 350px;
+} */
+.wd-profile form.right-bottom i{
+  font-size: 1em;
+}
+.wd-profle i.link {
+  font-size: 1em;
+}

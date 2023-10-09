@@ -1,52 +1,81 @@
-<table>
-  <tr>
-    <td valign="top">
-      <ul>
-        <li><a href="/Kanbas/Account/Profile/screen.html">Account</a></li>
-        <li><a href="/Kanbas/Dashboard/screen.html">Dashboard</a></li>
-        <li><a href="/Kanbas/Courses/CourseNavigation/index.html">Courses</a></li>
-        <li><a href="/Kanbas/Calender/screen.html">Calender</a></li>
-        <li><a href="/Kanbas/Inbox/screen.html">Inbox</a></li>
-        <li><a href="/Kanbas/History/screen.html">History</a></li>
-        <li><a href="/Kanbas/Studio/screen.html">Studio</a></li>
-        <li><a href="/Kanbas/Commons/screen.html">Commons</a></li>
-        <li><a href="/Kanbas/Help/screen.html">Help</a></li>
-      </ul>
-    </td>
-    <td valign="top">
-      <ul>
-        <li><a href="/Kanbas/Courses/Home/index.html">Home</a></li>
-        <li><a href="/Kanbas/Courses/Modules/index.html">Modules</a></li>
-        <li><a href="/Kanbas/Courses/Piazza/screen.html">Piazza</a></li>
-        <li><a href="/Kanbas/Courses/Assignments/AssignmentsEditor/">Assignments</a></li>
-        <li><a href="/Kanbas/Courses/Quizzes/screen.html">Quizzes</a></li>
-        <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
-        <li><a href="/Kanbas/Courses/People/screen.html">People</a></li>
-        <li><a href="/Kanbas/Courses/Panopto Video/screen.html">Panopto Video</a></li>
-        <li><a href="/Kanbas/Courses/Discussions/screen.html">Discussions</a></li>
-        <li><a href="/Kanbas/Courses/Announcements/screen.html">Announcements</a></li>
-        <li><a href="/Kanbas/Courses/Pages/screen.html">Pages</a></li>
-        <li><a href="/Kanbas/Courses/Files/screen.html">Files</a></li>
-        <li><a href="/Kanbas/Courses/Rubrics/screen.html">Rubrics</a></li>
-        <li><a href="/Kanbas/Courses/Outcomes/screen.html">Outcomes</a></li>
-        <li><a href="/Kanbas/Courses/Collaborations/screen.html">Collaborations</a></li>
-        <li><a href="/Kanbas/Courses/Syllabus/screen.html">Syllabus</a></li>
-        <li><a href="/Kanbas/Courses/Settings/nevigation.html">Settings</a></li>
-      </ul>
-    </td>
-    <td valign="top">
-      Zhen's Profile
-      <hr>
-      <h3>Zhen Lu</h3>
-      <form action="/public/Kanbas/Account/Profile/edit.html" method="get">
-        <button type="edit">Edit Profile</button>
-      </form>
-      <h2>Contact</h2>
-      No registered services, you can add some on the settings page.
-      <h2>Biography</h2>
-      A computer Science grad student.
-      <h2>Links</h2>
-      <a href="#">Youtube</a>
-    </td>
-  </tr>
-</table>
+<html>
+  <head>
+    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="/public/Kanbas/KanbasNavigation/index.css">
+    <link rel="stylesheet" href="/public/Kanbas/Courses/CourseNavigation/index.css">
+    <link rel="stylesheet" href="/public/vendors/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/public/Kanbas/Account/Profile/screen.css">
+    <link rel="stylesheet" href="/public/vendors/bootstrap/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="wd-flex-row-container">
+      <div class="wd-bg-color-black d-none d-md-block">
+        <ul class="wd-kanbas-navigation">
+          <li class="wd-black-white"><a href="/Kanbas/Account/Profile/screen.html">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            Account</a></li>
+          <li class="wd-active"><a href="/Kanbas/Dashboard/screen.html">
+            <i class="fa fa-tachometer" aria-hidden="true"></i>
+            Dashboard</a></li>
+          <li><a href="/Kanbas/Courses/CourseNavigation/index.html">
+            <i class="fa fa-book" aria-hidden="true"></i>
+            Courses</a></li>
+          <li><a href="/Kanbas/Calender/screen.html">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            Calender</a></li>
+          <li><a href="/Kanbas/Inbox/screen.html">
+            <i class="fa fa-inbox" aria-hidden="true"></i><br/>
+            Inbox</a></li>
+          <li><a href="/Kanbas/History/screen.html">
+            <i class="fa fa-history" aria-hidden="true"></i>
+            History</a></li>
+          <li><a href="/Kanbas/Studio/screen.html">
+            <i class="fa fa-desktop" aria-hidden="true"></i>
+            Studio</a></li>
+          <li><a href="/Kanbas/Commons/screen.html">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            Commons</a></li>
+          <li><a href="/Kanbas/Help/screen.html">
+            <i class="fa fa-question-circle" aria-hidden="true"></i><br/>
+            Help</a></li>
+        </ul>
+      </div>
+      <div class="d-none d-md-block">
+        <ul class="wd-course-navigation">
+          <li><a href="/Kanbas/Account/Notifications/index.html">Notifications</a></li>
+          <li class="wd-active"><a href="/Kanbas/Account/Profile/index.html">Profile</a></li>
+          <li><a href="/Kanbas/Account/Files/index.html">Files</a></li>
+          <li><a href="/Kanbas/Account/Settings/index.html">Settings</a></li>
+          <li><a href="/Kanbas/Account/ePortfolios/screen.html">ePortfolios</a></li>
+          <li><a href="/Kanbas/Account/Shared Content/index.html">Shared Content</a></li>
+          <li><a href="/Kanbas/Account/The Hub/screen.html">The Hub</a></li>
+          <li><a href="/Kanbas/Account/Qwickly Course Tools/index.html">Qwickly Course Tools</a></li>
+          <li><a href="/Kanbas/Account/Global Announcement/index.html">Global Announcement</a></li>
+        </ul>
+      </div>
+      <div class="d-none d-md-block wd-profile">
+        <p>Jose Annunziato's Profile</p>
+        <hr>
+        <div class="float-end">
+          <form class="right-bottom" action="edit.html" method="get">
+            <button type="edit" class="btn btn-light" >
+              <i class="fa fa-pencil" aria-hidden="true"></i> Edit Profile</button>
+          </form>
+        </div>
+        
+        <div class="user-image">
+          <i class="fa fa-user-circle" aria-hidden="true"></i>
+        </div>
+        
+        <h3>Jose Annunziato</h3>
+        <h2>Contact</h2>
+        <p>No registered services, you can add some on the <a href="/Account/Settings/index.html">settings</a> page.</p>
+        <h2>Biography</h2>
+        Faculty. Software Engineer. AI, Space, and renewables enthusiast.
+        <h2>Links</h2>
+        <i class="fa fa-link" aria-hidden="true"></i>
+        <a href="https://www.youtube.com/watch?v=9XsRrm-VKj4">Youtube</a>
+        
+      </div>
+  </body>
+</html>

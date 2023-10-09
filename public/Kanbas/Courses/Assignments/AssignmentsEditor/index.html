@@ -1,19 +1,369 @@
-<label for="assignmentName">Assignment Name</label> <br />
-<input type="text" value="Assignment 1 - HTML" id="assignmentName" placeholder="Assignment Name"/> 
+<html>
+  <head>
+    <link rel="stylesheet" href="/public/styles.css" />
+    <link rel="stylesheet" href="/public/Kanbas/KanbasNavigation/index.css" />
+    <link
+      rel="stylesheet"
+      href="/public/Kanbas/Courses/CourseNavigation/index.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/index.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/public/vendors/font-awesome/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="/public/vendors/bootstrap/bootstrap.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+      integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+
+  <body>
+    <div class="wd-bg-color-black d-block d-md-none">
+      <a href="/Kanbas/KanbasNavigation/index.html">Kanbas Navigator</a>
+      <a href="/Kanbas/Courses/CourseNavigation/index.html">Course Navigator</a>
+    </div>
+
+    <div class="wd-flex-row-container">
+      <div class="wd-bg-color-black d-none d-md-block">
+        <ul class="wd-kanbas-navigation">
+          <li class="wd-black-white">
+            <a href="/Kanbas/Account/Profile/screen.html">
+              <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+              Account</a
+            >
+          </li>
+          <li>
+            <a href="/Kanbas/Dashboard/screen.html">
+              <i class="fa fa-tachometer" aria-hidden="true"></i>
+              Dashboard</a
+            >
+          </li>
+          <li class="wd-active">
+            <a href="/Kanbas/Courses/CourseNavigation/index.html">
+              <i class="fa fa-book" aria-hidden="true"></i>
+              Courses</a
+            >
+          </li>
+          <li>
+            <a href="/Kanbas/Calender/screen.html">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              Calender</a
+            >
+          </li>
+          <li>
+            <a href="/Kanbas/Inbox/screen.html">
+              <i class="fa fa-inbox" aria-hidden="true"></i><br />
+              Inbox</a
+            >
+          </li>
+          <li>
+            <a href="/Kanbas/History/screen.html">
+              <i class="fa fa-history" aria-hidden="true"></i>
+              History</a
+            >
+          </li>
+          <li>
+            <a href="/Kanbas/Studio/screen.html">
+              <i class="fa fa-desktop" aria-hidden="true"></i>
+              Studio</a
+            >
+          </li>
+          <li>
+            <a href="/Kanbas/Commons/screen.html">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              Commons</a
+            >
+          </li>
+          <li>
+            <a href="/Kanbas/Help/screen.html">
+              <i class="fa fa-question-circle" aria-hidden="true"></i><br />
+              Help</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="wd-flex-column-container">
+        <div class="d-none d-md-block">
+          <button class="btn btn-light float-end">Student View</button>
+          <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="/public/Kanbas/Courses/Home/index.html"
+                  >CS5610.11550.202410</a
+                >
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Assignments
+              </li>
+            </ol>
+          </nav>
+
+          <hr />
+        </div>
+        <div class="wd-flex-row-container">
+          <div>
+            <ul class="wd-course-navigation d-none d-md-block">
+              <li>
+                <a href="/Kanbas/Courses/Home/index.html">Home</a>
+              </li>
+              <li><a href="/Kanbas/Courses/Modules/index.html">Modules</a></li>
+              <li><a href="/Kanbas/Courses/Piazza/index.html">Piazza</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Zoom Meetings/index.html"
+                  >Zoom Meetings</a
+                >
+              </li>
+              <li class="wd-active">
+                <a
+                  href="/Kanbas/Courses/Assignments/AssignmentsEditor/screen.html"
+                  >Assignments</a
+                >
+              </li>
+              <li><a href="/Kanbas/Courses/Quizzes/index.html">Quizzes</a></li>
+              <li><a href="/Kanbas/Courses/Grades/screen.html">Grades</a></li>
+              <li><a href="/Kanbas/Courses/People/index.html">People</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Panopto Video/index.html"
+                  >Panopto Video</a
+                >
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Modules/index.html">Disscussions</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Announcement/index.html"
+                  >Announcement</a
+                >
+              </li>
+              <li><a href="/Kanbas/Courses/Pages/index.html">Pages</a></li>
+              <li><a href="/Kanbas/Courses/Files/index.html">Files</a></li>
+              <li><a href="/Kanbas/Courses/Rubrics/index.html">Rubrics</a></li>
+              <li>
+                <a href="/Kanbas/Courses/Outcomes/index.html">Outcomes</a>
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Collaborations/index.html"
+                  >Collaborations</a
+                >
+              </li>
+              <li>
+                <a href="/Kanbas/Courses/Syllabus/index.html">Syllabus</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <input
+              type="text"
+              class="float-start"
+              placeholder="Search for Assignment"
+            />
+            <div class="float-end">
+              <button class="btn btn-secondary">
+                <i class="fa fa-plus" aria-hidden="true"></i>Group
+              </button>
+              <button class="btn btn-danger">
+                <i class="fa fa-plus" aria-hidden="true"></i>Assignment
+              </button>
+              <button class="btn btn-secondary">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="clearfix"></div>
+            <hr />
+
+            <div>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div>
+                      <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                      Assignments
+                    </div>
+                    <div class="text-end">
+                      <p
+                        class="wd-rounded-corners-all-around wd-border-grey wd-border-solid"
+                      >
+                        40% of Total
+                      </p>
+                      <i class="fa fa-plus" aria-hidden="true"></i>
+                      <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="list-group-item" aria-current="true">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A1 SETUP</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A2 HTML</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A3 CSS</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A4 BOOTSTRAP</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A5 JAVASCRIPT</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A6 REACT</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A7</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A8</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A9</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A10</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A11</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <span class="ms-3"><a href="/public/Kanbas/Courses/Assignments/AssignmentsEditor/edit.html">A12</a></span>
+                  <div class="float-end">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="wd-bg-color-green d-none d-xl-block">
+            <h3>Course Status<br /></h3>
+            <button>Unpublish</button>
+            <button>
+              <i class="fa fa-check-circle" aria-hidden="true"></i
+              >Published</button
+            ><br />
+            <ul>
+              <li><a href="#">Import Existing Content</a></li>
+              <li><a href="#">Import From Commons</a></li>
+              <li><a href="#">Choose Home Page</a></li>
+              <li><a href="#">View Course Stream</a></li>
+              <li><a href="#">New Announcement</a></li>
+              <li><a href="#">New Analytics</a></li>
+              <li><a href="#">View Course Notifications</a></li>
+            </ul>
+            <h3>Comming up <br /></h3>
+            <a href="#">View Calendar</a><br />
+            <ul>
+              <li>
+                <a href="#">Lecture CS4550.12631.202410 Sep 7 at 11:45am</a>
+              </li>
+              <li>
+                <a href="#">Lecture CS4550.12631.202410 Sep 11 at 11:45am</a>
+              </li>
+              <li><a href="#">CS5610 06 SP23 Lecture Sep 11 at 6pm</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- <div class="old">
+  <label for="assignmentName">Assignment Name</label> <br />
+<input  class="form control" type="text" value="Assignment 1 - HTML" id="assignmentName" placeholder="Assignment Name"/> 
 
 <h3>Description</h3>
-<textarea cols="50" rows="5">
+<textarea  class="form control" cols="50" rows="5">
 This is the first assignment to build kanbas
 </textarea>
 
 <h3>Points</h3>
-<input type="number" value="100" max="100" min="50" step="5" id="points" placeholder="Points"/>
+<input  class="form control" type="number" value="100" max="100" min="50" step="5" id="points" placeholder="Points"/>
 
 <h3>Submission Type</h3>
 <input type="checkbox" id="textEntry"/> <label for="textEntry">Text Entry</label><br />
-
 <input type="checkbox" checked /> Website URL<br />
-
 <label> <input type="checkbox" /> Media Recordings <label><br />
 <input type="checkbox" /> File Uploads<br />
 
@@ -30,8 +380,10 @@ This is the first assignment to build kanbas
 <input type="radio" name="movie" />Horror <br />
 
 <h3>Due Date</h3>
-<input type="date" value="2020-09-16" min="2020-09-04" max="2020-09-23" id="dueDate" placeholder="Due Date"/>
+<input  class="form control" type="date" value="2020-09-16" min="2020-09-04" max="2020-09-23" id="dueDate" placeholder="Due Date"/>
 
 <h3>Other</h3>
-<input type="color" value="#ff0000" />
-<input type="email" />
+<input class="form control" type="color" value="#ff0000" />
+<input class="form control" type="email" />
+<input class="form control" type="tel"/>
+</div> -->

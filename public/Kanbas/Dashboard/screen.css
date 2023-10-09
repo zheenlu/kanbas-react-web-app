@@ -1,0 +1,8 @@
+.wd-dashboard-grid .col {
+  width: 270px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}

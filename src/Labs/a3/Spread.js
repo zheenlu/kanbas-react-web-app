@@ -1,3 +1,4 @@
+import React from 'react';
 function Spread() {
 	const arr1 = [1, 2, 3];
 	const arr2 = [...arr1, 4, 5, 6]; // copying/spread arr1 onto another arr (arr2 here), or you can put it anywhere [4, 5, 6, ...arr1, 7, 8, 9]

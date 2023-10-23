@@ -1,3 +1,111 @@
-wd-kanbas-navigation .wd-icon {
+.wd-kanbas-navigation .wd-icon {
   font-size: 2em;
+  color:#D41B2C;
 }
+
+.wd-kanbas-navigation .wd-account-icon {
+  color: white;
+}
+
+.wd-kanbas-navigation .active .wd-account-icon {
+  color: black;
+}
+
+.wd-kanbas-navigation .list-group-item:first-child,
+.wd-kanbas-navigation .list-group-item:last-child,
+.wd-kanbas-navigation .list-group-item.active:last-child,
+.wd-kanbas-navigation.list-group {
+  border-radius: 0px;
+}
+
+.wd-kanbas-navigation {
+  background-color: black;
+  list-style: none;
+  padding: 0px;
+  width: 80px !important;
+  margin: 0px;
+  height: 100vh;
+}
+
+.wd-kanbas-navigation a {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 0.8em;
+  text-align: center;
+  background-color: black;
+  border: none;
+  color: white;
+  text-decoration: none;
+}
+
+.wd-kanbas-navigation a.active {
+  background-color: white;
+  color: #D41B2C;
+}
+
+
+
+/*******************************
+ * my implementation *
+ *******************************/
+
+
+ /* .kanbas-navi-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-radius: 0% !important;
+} */
+
+/* .wd-kanbas-navigation {
+  background-color: black !important;
+  list-style: none;  
+  width: 100px; 
+
+} */
+
+/* .kanbas-navi-item {
+  background-color: black !important;
+  width: 100px;
+  list-style: none;
+} */
+
+/* .list-group-item {
+
+  border: none !important;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center; 
+  text-align: center !important;
+
+} */
+
+/* .wd-icon {
+  font-size: 2.2em;
+  color:#D41B2C;
+  margin-bottom: 5px;
+}
+
+.wd-account-icon {
+  color: white;
+} */
+
+
+/* .kanbas-navi-text {
+  color: white;
+  text-decoration: none; 
+  font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  text-align: center !important;
+} */
+
+/* .list-group-item.active {
+  background-color: white !important;
+}
+
+.list-group-item.active .kanbas-navi-text {
+  color: #D41B2C !important;
+}
+
+.list-group-item.active .wd-account-icon {
+  color: black !important;
+} */

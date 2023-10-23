@@ -6,18 +6,31 @@ import Courses from "./Courses";
 import Account from "./Account";
 import Dashboard from "./Dashboard";
 import Calendar from "./Calendar";
+import Inbox from "./Inbox";
+import History from "./History";
+import Studio from "./Studio";
+import Help from "./Help";
+import React from 'react';
+import "./index.css";
+import CourseNavigation from "./Courses/CourseNavigation";
 
 function Kanbas() {
   return (
-    <div className="d-flex">
+    <div className="d-flex fixed-navigation">
       <KanbasNavigation />
-      <div>
+
+      <div className="main-div">
         <Routes>  
           <Route path="/" element={<Navigate to="Dashboard" />} />
-          <Route path="/Kanbas/Account" element={<Account />} />
-          <Route path="/Kanbas/Dashboard" element={<Dashboard />} />
-          <Route path="/Kanbas/Courses/:courseId" element={<Courses />} />
-          <Route path="/Kanbas/Calendar" element={< Calendar />} />
+          <Route path="Account" element={<Account />} />
+          <Route path="Dashboard" element={<Dashboard />} />
+          <Route path="Courses/:courseId/*" element={<Courses />} />
+          <Route path="Calendar" element={< Calendar />} />
+          <Route path="Inbox" element={< Inbox />} />
+          <Route path="History" element={< History />} />
+          <Route path="Studio" element={< Studio />} />
+          <Route path="Help" element={< Help />} />
+          
         </Routes>
         
 

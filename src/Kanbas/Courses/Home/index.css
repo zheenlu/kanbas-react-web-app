@@ -1,0 +1,27 @@
+.home-screen-container {
+  display: flex;
+  flex: 1;
+}
+
+.home-content-container {
+  display: flex;
+  flex: 1; 
+}
+
+.status-div {
+  display:flex;
+  flex-direction: column;
+}
+
+.status-button-list {
+  list-style-type: none;
+}
+
+.status-button-item {
+  margin: 5px;
+  border-style: inherit;
+}
+
+.status-todo-list {
+  color: #D41B2C;
+}

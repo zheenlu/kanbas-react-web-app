@@ -1,3 +1,5 @@
+import React from 'react';
+
 function KanbasNavigation(active) {
   const links = [
     {name: "Account", url: "/Kanbas/Account/Profile/screen.html", icon: "fa-user-circle-o", class: "wd-black-white" },

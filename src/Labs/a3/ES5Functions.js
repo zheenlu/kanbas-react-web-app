@@ -1,3 +1,4 @@
+import React from 'react';
 function ES5Functions() {
     function add (a, b) { // in js, you can declare a function inside a function
         return a + b;

@@ -5,6 +5,7 @@ import Kanbas from './Kanbas'; // it looks for index.js in that folder, that's w
 import HellowWord from './Labs/a3/HelloWorld';
 import {HashRouter} from "react-router-dom";
 import { Route, Routes, Link, Navigate } from 'react-router-dom';
+import React from 'react';
 
 
 function App() {

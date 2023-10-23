@@ -1,4 +1,5 @@
 import './index.css';
+import React from 'react';
 function Classes() {
   const color = "blue";
   const dangerous = true;

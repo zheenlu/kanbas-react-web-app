@@ -1,3 +1,4 @@
+import React from 'react';
 function VariablesAndConstants() {
   var functionScoped = 2; // we don't use var anymore
   let blockScoped = 5; // we use "let" and "const" instead of var. "let" declares a variable we can change over time

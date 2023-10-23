@@ -1,3 +1,4 @@
+import React from 'react';
 function WorkingWithArrays() {
   var functionScoped = 2;
   let blockScoped = 5;

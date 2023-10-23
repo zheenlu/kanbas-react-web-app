@@ -1,0 +1,64 @@
+.wd-course-navigation {
+  background-color: white;
+  list-style: none;
+  padding: 0px;
+  width: 120px;
+  margin: 0px;
+  margin-left: 20px;
+  border-radius: 0px;
+  border: none;
+}
+.wd-course-navigation a {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+}
+.wd-course-navigation a.active {
+  border-left: 2px solid black;
+  background-color: white;
+  border-radius: 0px;
+}
+.wd-course-navigation a.active {
+  color: black;
+}
+
+.wd-course-navigation a {
+  color: #D41B2C;
+  text-decoration: none;
+  /* 为啥写两个一样的class？为啥分开写 */
+}
+
+
+
+/* .course-nav-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-radius: 0% !important;
+  width: 80px;
+}
+
+.wd-courses-navigation-item {
+  background-color: white !important;
+  list-style: none;
+}
+
+.course-nav-container .list-group-item.active {
+  background-color: white;
+  color: black;
+  border-left: 2px solid black !important; ;
+}
+
+.courses-navi-text {
+  color: #D41B2C;
+  text-decoration: none;
+  font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  text-align: center !important;
+}
+
+.course-nav-container .list-group-item.active .courses-navi-text {
+  color: black;
+} */

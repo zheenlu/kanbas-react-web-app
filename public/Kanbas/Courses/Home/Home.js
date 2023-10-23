@@ -1,5 +1,6 @@
 import KanbasNavigation from "/Kanbas/KanbasNavigation/KanbasNavigation.js";
 import CourseNavigation from "/Kanbas/Courses/CourseNavigation/CourseNavigation.js";
+import React from 'react';
  
 
 function Home() {

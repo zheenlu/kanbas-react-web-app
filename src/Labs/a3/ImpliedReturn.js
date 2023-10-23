@@ -1,3 +1,4 @@
+import React from 'react';
 function ImpliedReturn() {
     function divide(a, b) {
         return a / b;

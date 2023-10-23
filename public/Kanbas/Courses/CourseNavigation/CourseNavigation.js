@@ -1,3 +1,5 @@
+import React from 'react';
+
 function CourseNavigation(active) {
   const links = [
     { name: "Home", url: "/Kanbas/Courses/Home/index.html" },

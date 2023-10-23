@@ -1,0 +1,16 @@
+.red-icon-courseName {
+  color: #D41B2C;
+  margin-bottom: 0rem;
+}
+
+.course-main-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-content-div {
+  display: flex;
+  flex-direction: column;
+}
+
+

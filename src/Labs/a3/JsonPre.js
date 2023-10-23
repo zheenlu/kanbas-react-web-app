@@ -1,3 +1,4 @@
+import React from 'react';
 function JsonPre( {json} ) {
   return (
     <pre>

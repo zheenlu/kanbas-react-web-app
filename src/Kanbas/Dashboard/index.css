@@ -1,0 +1,49 @@
+/* .wd-dashboard-grid .col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 270px;
+} */
+
+.wd-dashboard-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.col {
+  width: 270px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.card-text {
+  color: #777;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}

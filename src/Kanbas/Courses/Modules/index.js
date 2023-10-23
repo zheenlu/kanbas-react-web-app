@@ -25,6 +25,7 @@ function Modules() {
 						</button>
 						<ul class="dropdown-menu">
 							<li>
+								{/* eslint-disable jsx-a11y/anchor-is-valid */}
 								<a
 									class="dropdown-item"
 									href="#">
@@ -32,6 +33,7 @@ function Modules() {
 								</a>
 							</li>
 							<li>
+								{/* eslint-disable jsx-a11y/anchor-is-valid */}
 								<a
 									class="dropdown-item"
 									href="#">

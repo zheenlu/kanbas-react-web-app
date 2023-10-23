@@ -36,10 +36,7 @@ function Kanbas() {
 
       </div>
     </div>
-    // <div>
-    //   {/* <Nav />  */}
-    //   <h1>Kanbas</h1>
-    // </div>
+
   );
 }
 

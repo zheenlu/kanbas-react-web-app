@@ -77,6 +77,7 @@ function Courses() {
 function Breadcrumbs({ courseName }) {
 	const location = useLocation();
 	const { pathname } = location;
+	console.log(`ffhweifh is: ${pathname}`);
 	console.log(`pathname is: ${pathname}`);
 
 	const routeToBreadcrumb = {

@@ -23,7 +23,7 @@ function Dashboard() {
 							<img
 								src="/images/Howls_1.jpeg"
 								className="card-img-top"
-								alt="Course Image"
+								alt="Course"
 							/>{" "}
 							{/* under src/Kanbas/Dashboard, how the path knows to images under public/. I mean without writing fully the path name, is it because ""? 
               In a React application, when you use relative paths for static assets like images, the application assumes that the root of your public directory is the base URL. So, when you provide a path like /images/Howls_1.jpeg, React will automatically look for the image file in the public directory, which is the root of your application.

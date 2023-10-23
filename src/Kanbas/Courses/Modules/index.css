@@ -1,11 +1,9 @@
-.module-div {
+/* .module-div {
   display: flex;
   flex-direction: column;
 }
 
 .module-list-container {
-  /* display: flex;
-  flex-direction: column; */
   height: 100vh;
   border-radius: 0% !important;
   width: auto;
@@ -29,8 +27,24 @@
 
 .module-list-container .module-list-item .module-list-item-content {
   background-color: white;
-  /* border: 1px solid #c7cdd1; */
   position: relative;
   display: flex;
   text-align: left;
+} */
+
+.circleCheckColor {
+  color: green;
+}
+
+ 
+
+.moduleScreen .list-group-item:nth-child(n + 2) {
+  border: 1px solid #c7cdd1;
+  border-left: 5px green solid;
+}
+.moduleScreen .list-group-item .fa-circle-check {
+  color: green;
+}
+.moduleScreen .list-group-item .fa-bar {
+  color: green;
 }

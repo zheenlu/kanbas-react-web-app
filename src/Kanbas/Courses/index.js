@@ -5,7 +5,6 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";
 import Home from "./Home";
-import JsonPre from "../../Labs/a3/JsonPre";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";

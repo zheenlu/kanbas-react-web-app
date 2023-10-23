@@ -1,4 +1,3 @@
-import ModuleList from "../Modules/ModuleList";
 import Module from "../Modules/index";
 import React from "react";
 import "./index.css";

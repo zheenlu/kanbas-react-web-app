@@ -1,5 +1,3 @@
-import { func } from "prop-types";
-import Nav from "../Nav";
 import KanbasNavigation from "./KanbasNavigation";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Courses from "./Courses";
@@ -12,7 +10,7 @@ import Studio from "./Studio";
 import Help from "./Help";
 import React from 'react';
 import "./index.css";
-import CourseNavigation from "./Courses/CourseNavigation";
+
 
 function Kanbas() {
   return (

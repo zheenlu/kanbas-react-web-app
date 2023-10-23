@@ -1,4 +1,3 @@
-import { func } from "prop-types";
 import { Route, Routes, Link, useLocation, Navigate } from "react-router-dom";
 import Nav from "../Nav";
 import Assignment3 from "./a3";

@@ -2,14 +2,14 @@
 // import './App.css';
 import Labs from './Labs';
 import Kanbas from './Kanbas'; // it looks for index.js in that folder, that's why we don't need to specify the file name, and sometimes name it as index.jse
-import HellowWord from './Labs/a3/HelloWorld';
-import {HashRouter} from "react-router-dom";
-import { Route, Routes, Navigate } from 'react-router-dom';
-import React from 'react';
-
+import Exams from "./Exams";
+import HellowWord from "./Labs/a3/HelloWorld";
+import { HashRouter } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
+import React from "react";
 
 function App() {
-  return (
+	return (
 		<HashRouter>
 			<div>
 				{/* <h1>React Labs</h1>
@@ -36,6 +36,10 @@ function App() {
 					<Route
 						path="/Kanbas/*"
 						element={<Kanbas />}
+					/>
+					<Route
+						path="/Exams/*"
+						element={<Exams />}
 					/>
 				</Routes>
 			</div>

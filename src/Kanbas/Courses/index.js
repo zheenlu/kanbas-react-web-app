@@ -11,22 +11,26 @@ import Grades from "./Grades";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import "./index.css";
 
-function Courses() {
+function Courses({ courses }) {
 	const { courseId } = useParams();
-	const course = db.courses.find((course) => course._id === courseId);
+	const course = courses.find((course) => course._id === courseId);
 
 	return (
-		
 		<div className="courses-main-div">
-
-			<div className="course-header-div">
+			{/* <div className="course-header-div">
 				<span className="red-icon-courseName">
-					<IoReorderThreeOutline  />
+					<IoReorderThreeOutline />
 					<Breadcrumbs courseName={course.name} />
 				</span>
 				<hr />
-			</div>
+			</div> */}
 			
+			<span className="red-icon-courseName">
+				<IoReorderThreeOutline />
+				<Breadcrumbs courseName={course.name} />
+			</span>
+			<hr />
+
 
 			<div className="nav-content-div">
 				<div className="course-nav-div">
@@ -68,7 +72,6 @@ function Courses() {
 					</Routes>
 				</div>
 			</div>
-
 		</div>
 	);
 }

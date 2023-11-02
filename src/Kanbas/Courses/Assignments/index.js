@@ -4,38 +4,88 @@ import db from "../../Database";
 import "./index.css";
 import {AiOutlinePlus} from "react-icons/ai";
 import {PiDotsThreeVerticalBold} from "react-icons/pi";
+import { useSelector, useDispatch } from "react-redux";
+import {
+	addAssignment,
+	deleteAssignment,
+	updateAssignment,
+	selectAssignment,
+} from "./assignmentsReducer";
+
 
 function Assignments() {
 	const { courseId } = useParams();
-	const assignments = db.assignments;
-	const courseAssignments = assignments.filter(
-		(assignment) => assignment.course === courseId
-	);
+	// const assignments = db.assignments;
+	const { assignments } = useSelector((state) => state.assignmentsReducer);
+	const { assignment } = useSelector((state) => state.assignmentsReducer);
+	const dispatch = useDispatch();
 
 	return (
 		<div>
-      <div>
-        <input
-          type="text"
-          defaultValue="Search for Assignment"
-        />
-        <div className="float-end">
-          <button className="btn btn-light"><AiOutlinePlus />Group</button>
-          <button className="btn btn-danger"><AiOutlinePlus />Assignment</button>
-          <button className="btn btn-light"><PiDotsThreeVerticalBold/></button>
-        </div>
-      </div>
+			<div className="d-flex align-items-center">
+				<input
+					type="text"
+					className="form-control w-50"
+					defaultValue="Search for Assignment"
+				/>
+				<button className="btn btn-light ms-2">
+					<PiDotsThreeVerticalBold />
+				</button>
+				<button className="btn btn-light ms-2">
+					<AiOutlinePlus /> Group
+				</button>
+				<Link
+					to={`/Kanbas/Courses/${courseId}/Assignments/AssignmentEditor?isNewAssignment=true`}
+					className="btn btn-danger ms-2">
+					<AiOutlinePlus /> Assignment
+				</Link>
+			</div>
 			<hr />
-			<h5>Assignments for course {courseId}</h5>
+			{/* <h5>Assignments for course {courseId}</h5> */}
+
+			{/* <button
+				className="btn btn-primary float-end ms-2"
+				style={{ marginTop: "0px" }}
+				onClick={() =>
+					dispatch(addAssignment({ ...assignment, course: courseId }))
+				}>
+				Add
+			</button> */}
+			{/* <button
+				className="btn btn-success float-end ms-2"
+				onClick={() => dispatch(updateAssignment(assignment))}>
+				Update
+			</button> */}
+			{/* <input
+				className="form-control"
+				value={assignment.title}
+				onChange={(e) =>
+					dispatch(selectAssignment({ ...assignment, title: e.target.value }))
+				}
+			/> */}
 			<div className="wd-courses-assignments list-group">
-				{courseAssignments.map((assignment) => (
-					<Link
-						key={assignment._id}
-						to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-						className="list-group-item">
-						{assignment.title}
-					</Link>
-				))}
+				{assignments
+					.filter((assignment) => assignment.course === courseId)
+					.map((assignment) => (
+						<Link
+							key={assignment._id}
+							to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+							className="list-group-item">
+							{assignment.title}
+							<button
+								navigate={`/Kanbas/Courses/${courseId}/Assignments/AssignmentEditor`}
+								className="btn btn-success float-end ms-2"
+								onClick={() => dispatch(selectAssignment(assignment))}>
+								Edit
+							</button>
+
+							<button
+								className="btn btn-danger float-end ms-2"
+								onClick={() => dispatch(deleteAssignment(assignment._id))}>
+								Delete
+							</button>
+						</Link>
+					))}
 			</div>
 		</div>
 	);

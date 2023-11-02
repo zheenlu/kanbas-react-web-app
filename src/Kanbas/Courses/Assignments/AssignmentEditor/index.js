@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate, useParams, Link, useLocation } from "react-router-dom";
 import db from "../../../Database";
 import { AiOutlineCheckCircle } from "react-icons/ai";
@@ -19,21 +19,25 @@ function AssignmentEditor() {
 
 	const location = useLocation();
   const isNewAssignment = new URLSearchParams(location.search).get("isNewAssignment") === "true";
-  console.log("???", isNewAssignment);
+	const [name, setName] = useState({
+		title: isNewAssignment ? "" : assignment.title,
+	});
+	const [description, setDescription] = useState({
+		description: isNewAssignment ? "" : assignment.description,
+	});
 
 	const handleSave = () => {
-    if (isNewAssignment) {
-      // Add a new assignment
+		if (isNewAssignment) {
+			// Add a new assignment
 			const newAssignment = { ...assignment, course: courseId };
-    	console.log("Adding a new assignment:", newAssignment);
-      dispatch(addAssignment({ ...assignment, course: courseId }));
-    } else {
-      // Update an existing assignment
-      dispatch(updateAssignment(assignment));
-    }
-    // Navigate back to Assignments
-    navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-  }
+			dispatch(addAssignment({ ...assignment, course: courseId }));
+		} else {
+			// Update an existing assignment
+			dispatch(updateAssignment(assignment));
+		}
+		// Navigate back to Assignments
+		navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+	};
 
 	
 	return (
@@ -57,15 +61,25 @@ function AssignmentEditor() {
 					className="form-control mb-2"
 				/> */}
 				<input
-				className="form-control"
-				value={assignment.title}
-				onChange={(e) =>
-					dispatch(selectAssignment({ ...assignment, title: e.target.value }))
-				}
+					className="form-control"
+					value={name.title}
+					placeholder="New Assignment"
+					onChange={(e) => {
+						dispatch(
+							selectAssignment({ ...assignment, title: e.target.value })
+						);
+						setName({ ...name, title: e.target.value });
+					}}
 				/>
 				<textarea
 					className="form-control"
-					value={assignment?.description}></textarea>
+					value={description.description}
+					placeholder="New Assignment Description"
+					onChange={(e) => {
+						dispatch(selectAssignment({ ...assignment, description: e.target.value }));
+						setDescription({ ...description, description: e.target.value });
+					}}
+				></textarea>
 			</div>
 
 			<div className="mb-3 d-flex align-items-center">
@@ -131,7 +145,7 @@ function AssignmentEditor() {
 			</Link>
 			<button
 				onClick={handleSave}
-				className="btn btn-success me-2 float-end" >
+				className="btn btn-success me-2 float-end">
 				Save
 			</button>
 		</div>

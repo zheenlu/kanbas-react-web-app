@@ -72,16 +72,27 @@ function Assignments() {
 							to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
 							className="list-group-item">
 							{assignment.title}
-							<button
-								navigate={`/Kanbas/Courses/${courseId}/Assignments/AssignmentEditor`}
-								className="btn btn-success float-end ms-2"
-								onClick={() => dispatch(selectAssignment(assignment))}>
-								Edit
-							</button>
+								<button
+									navigate={`/Kanbas/Courses/${courseId}/Assignments/AssignmentEditor`}
+									className="btn btn-success float-end ms-2"
+									onClick={() => dispatch(selectAssignment(assignment))}>
+									Edit
+								</button>
 
 							<button
 								className="btn btn-danger float-end ms-2"
-								onClick={() => dispatch(deleteAssignment(assignment._id))}>
+								onClick={(e) => {
+									const confirmation = window.confirm(
+										"Are you sure you want to delete this assignment?"
+									);
+									if (confirmation) {
+										dispatch(deleteAssignment(assignment._id));
+									} 
+									// else {
+									// 	e.preventDefault(); // Prevent the default behavior (navigating to AssignmentEditor)
+									// }
+									e.preventDefault();
+								}}>
 								Delete
 							</button>
 						</Link>

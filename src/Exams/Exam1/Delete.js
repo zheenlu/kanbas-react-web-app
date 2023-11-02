@@ -4,7 +4,7 @@ function Delete() {
     qwe = tyu;
   };
   const ert = (rty) => {
-    const tyu = qwe.filter((yui) => yui != rty);
+    const tyu = qwe.filter((yui) => yui !== rty);
     wer(tyu);
     console.log(qwe);
   };

@@ -1,14 +1,11 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import db from "../../Database";
 import "./index.css";
 import {AiOutlinePlus} from "react-icons/ai";
 import {PiDotsThreeVerticalBold} from "react-icons/pi";
 import { useSelector, useDispatch } from "react-redux";
 import {
-	addAssignment,
 	deleteAssignment,
-	updateAssignment,
 	selectAssignment,
 } from "./assignmentsReducer";
 
@@ -17,7 +14,7 @@ function Assignments() {
 	const { courseId } = useParams();
 	// const assignments = db.assignments;
 	const { assignments } = useSelector((state) => state.assignmentsReducer);
-	const { assignment } = useSelector((state) => state.assignmentsReducer);
+	// const { assignment } = useSelector((state) => state.assignmentsReducer);
 	const dispatch = useDispatch();
 
 	return (

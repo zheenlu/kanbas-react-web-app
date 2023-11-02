@@ -1,6 +1,5 @@
 import { useParams } from "react-router";
 import React from "react";
-import db from '../Database';
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation";
 import Modules from "./Modules";

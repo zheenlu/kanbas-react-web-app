@@ -1,13 +1,12 @@
 import React, {useState} from "react";
 import { useNavigate, useParams, Link, useLocation } from "react-router-dom";
-import db from "../../../Database";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
 import { useSelector, useDispatch } from "react-redux";
-import { addAssignment, deleteAssignment, updateAssignment, selectAssignment } from "../assignmentsReducer";
+import { addAssignment, updateAssignment, selectAssignment } from "../assignmentsReducer";
 
 function AssignmentEditor() {
-	const { assignmentId } = useParams();
+	// const { assignmentId } = useParams();
 	// const assignment = db.assignments.find(
 	// 	(assignment) => assignment._id === assignmentId
 	// );
@@ -29,7 +28,7 @@ function AssignmentEditor() {
 	const handleSave = () => {
 		if (isNewAssignment) {
 			// Add a new assignment
-			const newAssignment = { ...assignment, course: courseId };
+			// const newAssignment = { ...assignment, course: courseId };
 			dispatch(addAssignment({ ...assignment, course: courseId }));
 		} else {
 			// Update an existing assignment

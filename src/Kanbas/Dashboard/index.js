@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import db from "../Database";
 import "./index.css"; // Assuming you have a separate CSS file for styling
 
 function Dashboard({

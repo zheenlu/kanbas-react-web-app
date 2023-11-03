@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 function Add({a, b, add2}) {
   const add = (a, b) => {

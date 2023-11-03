@@ -1,4 +1,5 @@
 import Add from "./Add";
+import React from 'react';
 
 function FunctionsAsParameters() {
   const add2 = (a, b) => {

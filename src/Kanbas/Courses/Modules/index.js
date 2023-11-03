@@ -2,6 +2,7 @@ import ModuleList from "./ModuleList";
 import "./index.css";
 import { FaEllipsisV } from "react-icons/fa";
 import { AiOutlineCheckCircle } from "react-icons/ai";
+import React from "react";
 
 function Modules() {
 	return (

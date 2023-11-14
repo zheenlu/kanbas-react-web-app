@@ -1,3 +1,5 @@
+import React from "react";
+
 function ClickEvent() {
 	const hello = (message) => {
 		alert(`Message: ${message}`);

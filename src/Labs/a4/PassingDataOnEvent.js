@@ -1,3 +1,4 @@
+import React from "react";
 function PassingDataOnEvent() {
 	const add = (a, b) => {
 		alert(`${a} + ${b} = ${a + b}`);

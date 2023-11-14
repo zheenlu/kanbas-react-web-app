@@ -1,0 +1,8 @@
+{
+  "extends": "react-app",
+  "rules": {
+    // Add or override ESLint rules here
+    "semi": ["error", "always"],
+    "no-console": "warn"
+  }
+}

@@ -16,11 +16,11 @@ function Assignment5() {
 						Welcome
 					</a>
 				</div>
-                <ExtraCredit2 />
-                <WorkingWithArrays />
-                <ExtraCredit />
-                <WorkingWithObjects />
-				<EncodingParametersInURLs />
+					<ExtraCredit2 />
+					<WorkingWithArrays />
+					<ExtraCredit />
+					<WorkingWithObjects />
+					<EncodingParametersInURLs />
 			</div>
 		);
 }

@@ -15,11 +15,18 @@ const assignment = {
 };
 
 function Lab5(app) {
-	app.get("/a5/todos", (req, res) => {
-		res.json(todos); // if the content type inside () is json file, you should use json() instead of send()
+	// the convention is to use /noun, here is app.post instead of app.get example
+	app.post("/a5/todos", (req, res) => {
+		const newTodo = {
+			...req.body, // spread operator
+			id: new Date().getTime(),
+			
+		};
+		todos.push(newTodo);
+		res.json(todos);
 	});
 
-  	// using Verb to create/add a new resource
+  // using Verb to create/add a new resource
 	app.get("/a5/todos/create", (req, res) => {
 		const newTodo = {
 			id: new Date().getTime(),
@@ -41,6 +48,16 @@ function Lab5(app) {
     res.json(todos);
   });
   app.get("/a5/todos/:id/delete", (req, res) => {
+    const { id } = req.params;
+    const index = todos.findIndex((todo) => todo.id === parseInt(id));
+    if (index === -1) { // if not found
+      res.status(404).send("Todo not found");
+      return;
+    }
+    todos.splice(index, 1); // remove 1 element at index
+    res.json(todos);
+  });
+	app.delete("/a5/todos/:id", (req, res) => {
     const { id } = req.params;
     const index = todos.findIndex((todo) => todo.id === parseInt(id));
     if (index === -1) { // if not found
@@ -81,24 +98,21 @@ function Lab5(app) {
 		res.json(todo);
 	});
 	app.get("/a5/todos", (req, res) => {
-		// But if you are filtering by any other field that is not a primary key, then you would use query parameters not a path parameter.
-		// const { completed } = req.query;
-		// if (completed) {
-		// 	const comp = (completed = "true");
-		// 	const t = todos.filter((todo) => todo.completed === comp);
-		// 	res.json(t);
-		// }
-		// res.json(todos);
-		const { completed } = req.query;
+    const { completed } = req.query;
+    console.log("completed:", completed);
+
     if (completed !== undefined) {
-      const completedTodos = todos.filter(
-        (t) => t.completed === completed);
-      res.json(completedTodos);
-      return;
+        console.log("Filtering completed todos");
+        const comp = completed === "true"; // Correctly parsing to boolean
+        const filteredTodos = todos.filter(todo => todo.completed === comp);
+        res.json(filteredTodos);
+				return; // intermediately stop, if don't have it, the server will continue to send res.json(todos). Only One response be sent every time
     }
     res.json(todos);
-
-	});
+});
+app.get("/a5/todos", (req, res) => {
+	res.json(todos); // if the content type inside () is json file, you should use json() instead of send()
+});
 
 	app.get("/a5/assignment/score/:newScore", (req, res) => {
 		const { newScore } = req.params;

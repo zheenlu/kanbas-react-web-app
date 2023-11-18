@@ -21,7 +21,7 @@ function ExtraCredit() {
 
 	return (
 		<div>
-			<h3>3.2.4 Extra Credit</h3>
+			<h2>3.2.4 Extra Credit</h2>
 			<a
 				href={`http://localhost:4000/a5/assignment/score/${assignment.score}`}
 				className="btn btn-primary me-2 float-end">

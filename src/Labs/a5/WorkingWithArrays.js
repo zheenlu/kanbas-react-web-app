@@ -1,19 +1,123 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 function WorkingWithArrays() {
 	const [id, setId] = useState(1);
 	const [title, setTitle] = useState("NodeJS Assignment");
-	const [todo, setTodo] = useState({
-		id: 1,
-		title: "NodeJS Assignment",
-		description: "Create a NodeJS server with ExpressJS",
-		due: "2021-09-09",
-		completed: false,
-	});
+	const [todos, setTodos] = useState([]);
+
+
+	const TODOS_API = "http://localhost:4000/a5/todos";
+
+	const getTodosPromise = () => {
+		//older syntax
+		const promise = axios.get("http://localhost:4000/a5/todos");
+		promise.then((response) => {
+			console.log(response.data);
+			setTodos(response.data);
+		});
+	};
+
+	const getTodoesAsync = async () => {
+		//newer syntax
+		const response = await axios.get("http://localhost:4000/a5/todos");
+		setTodos(response.data);
+	};
+
+	useEffect(() => {
+		// getTodosPromise();
+		getTodoesAsync();
+	}, []); //[] empty array: i only want it load once''
+
+	const createTodo = async () => {
+		const response = await axios.get("http://localhost:4000/a5/todos/create");
+		setTodos(response.data);
+	};
+
+	//using post
+	const postTodo = async () => {
+		const response = await axios.post("http://localhost:4000/a5/todos", {
+			title: title,
+		});
+		setTodos(response.data);
+	};
+
+	const removeTodo = async (id) => {
+		const response = await axios.get(`${TODOS_API}/${id}/delete`);
+		setTodos(response.data);
+	};
+	//using delete
+	const deleteTodo = async (id) => {
+		const response = await axios.delete(`${TODOS_API}/${id}`);
+		setTodos(response.data);
+	};
+
+	const updateTitle = async (id, title) => {
+		const response = await axios.get(`${TODOS_API}/${id}/title/${title}`);
+		setTodos(response.data);
+	};
+
+	const fetchTodoById = async (id) => {
+		console.log("the id is ", id);
+    const response = await axios.get(`${TODOS_API}/${id}`);
+    const todo = response.data;
+    // Assuming the API returns a single todo object
+    if (todo) {
+        setId(todo.id);
+        setTitle(todo.title);
+    }
+	};
 
 	return (
 		<div>
-			<h3>Working With Arrays</h3>
+			<h2>Working With Arrays</h2>
+			<h4>Todos from server</h4>
+			<button
+				onClick={createTodo}
+				className="btn btn-primary ">
+				Create Todo
+			</button>
+			<button
+				onClick={postTodo}
+				className="btn btn-primary ">
+				Post Todo
+			</button>
+
+			<button
+				onClick={() => updateTitle(id, title)}
+				className="btn btn-success ">
+				Update Todo
+			</button>
+			<input
+				onChange={(e) => setId(e.target.value)}
+				className="form-control"
+				value={id}
+			/>
+			<input
+				onChange={(e) => setTitle(e.target.value)}
+				className="form-control"
+				value={title}
+			/>
+			<ul className="list-group">
+				{todos.map((todo) => (
+					<li
+						className="list-group-item"
+						key={todo.id}>
+						<button
+							onClick={() => fetchTodoById(todo.id)}
+							className="btn btn-warning me-2 float-end">
+							Edit
+						</button>
+						<button
+							onClick={() => deleteTodo(todo.id)}
+							className="btn btn-danger float-end">
+							Delete
+						</button>
+						id: {todo.id} {""}
+						{todo.title}
+					</li>
+				))}
+			</ul>
 			<h4>Update item title</h4>
 			<input
 				onChange={(e) => setTitle(e.target.value)}
@@ -42,7 +146,7 @@ function WorkingWithArrays() {
 
 			<h3>Filtering Array Items</h3>
 			<a
-				href={`http://localhost:4000/a5/todos/${id}?completed=true`}
+				href={`http://localhost:4000/a5/todos?completed=true`}
 				className="btn btn-primary me-2">
 				Get Completed Todos
 			</a>

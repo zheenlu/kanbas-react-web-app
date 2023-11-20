@@ -37,36 +37,48 @@ function Lab5(app) {
 		res.json(todos);
 	});
   // Pattern Match: the order of the routes matters. If you put this route "/a5/todos/create" after the "/a5/todos/:id" route, it will never get executed because the previous route will match first. It will try to find word "create" in the path parameter ":id" and it will never find it. So, the order of the routes matters.
-  app.get("/a5/todos/:id/title/:newTitle", (req, res) => {
-    const { id, newTitle } = req.params;
-    const todo = todos.find((todo) => todo.id === parseInt(id));
-    if (!todo) {
-      res.status(404).send("Todo not found");
-      return;
-    }
-    todo.title = newTitle;
-    res.json(todos);
-  });
+	app.put("/a5/todos/:id", (req, res) => {
+		const { id } = req.params;
+		const { newTitle } = req.body; // Getting newTitle from request body
+
+		const todo = todos.find((todo) => todo.id === parseInt(id));
+		if (!todo) {
+			res.res
+				.status(404)
+				.json({ message: `Unable to update Todo with ID ${id}` });
+			return;
+		}
+
+		todo.title = newTitle;
+		res.json(todos);
+	});
+
   app.get("/a5/todos/:id/delete", (req, res) => {
-    const { id } = req.params;
-    const index = todos.findIndex((todo) => todo.id === parseInt(id));
-    if (index === -1) { // if not found
-      res.status(404).send("Todo not found");
-      return;
-    }
-    todos.splice(index, 1); // remove 1 element at index
-    res.json(todos);
-  });
+		const { id } = req.params;
+		const index = todos.findIndex((todo) => todo.id === parseInt(id));
+		if (index === -1) {
+			// if not found
+			res.status(404).send("Todo not found");
+			return;
+		}
+		todos.splice(index, 1); // remove 1 element at index
+		res.json(todos);
+	});
 	app.delete("/a5/todos/:id", (req, res) => {
-    const { id } = req.params;
-    const index = todos.findIndex((todo) => todo.id === parseInt(id));
-    if (index === -1) { // if not found
-      res.status(404).send("Todo not found");
-      return;
-    }
-    todos.splice(index, 1); // remove 1 element at index
-    res.json(todos);
-  });
+		const { id } = req.params;
+		const index = todos.findIndex((todo) => todo.id === parseInt(id));
+		if (index === -1) {
+			// if not found
+			res.res
+				.status(404)
+				.json({ message: `Unable to delete Todo with ID ${id}` });
+			return;
+		}
+		todos.splice(index, 1); // remove 1 element at index
+		res.json(todos);
+	});
+
+
 	app.get("/a5/todos/:id/completed/:newCompleted", (req, res) => {
 		const { id, newCompleted } = req.params;
 		const todo = todos.find((todo) => todo.id === parseInt(id));

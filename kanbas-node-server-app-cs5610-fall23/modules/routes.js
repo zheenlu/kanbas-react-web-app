@@ -41,6 +41,7 @@ function ModuleRoutes(app) {
 		res.json(newModule);
 	});
 
+  // update module
 	app.put("/api/modules/:id", (req, res) => {
 		const { id } = req.params;
 		const index = Database.modules.findIndex((module) => module._id === id);
@@ -48,7 +49,7 @@ function ModuleRoutes(app) {
 			res.status(404).send("Module not found");
 			return;
 		}
-		db.modules[index] = {
+		Database.modules[index] = {
 			...Database.modules[index],
 			...req.body,
 		};

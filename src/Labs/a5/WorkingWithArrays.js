@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function WorkingWithArrays() {
+	const [errorMessage, setErrorMessage] = useState(null);
 	const [id, setId] = useState(1);
 	const [title, setTitle] = useState("NodeJS Assignment");
 	const [todos, setTodos] = useState([]);
-
 
 	const TODOS_API = "http://localhost:4000/a5/todos";
 
@@ -48,30 +48,44 @@ function WorkingWithArrays() {
 	};
 	//using delete
 	const deleteTodo = async (id) => {
-		const response = await axios.delete(`${TODOS_API}/${id}`);
-		setTodos(response.data);
+		try {
+			const response = await axios.delete(`${TODOS_API}/${id}`);
+			setTodos(response.data);
+		} catch (error) {
+			console.error("Error deleting todo:", error);
+			// Handle the error appropriately
+			setErrorMessage(error.response.data.message);
+		}
 	};
 
-	const updateTitle = async (id, title) => {
-		const response = await axios.get(`${TODOS_API}/${id}/title/${title}`);
-		setTodos(response.data);
+	const updateTitle = async (id, newTitle) => {
+		try {
+			const response = await axios.put(`${TODOS_API}/${id}`, { newTitle });
+			setTodos(response.data);
+			
+		} catch (error) {
+			console.log(error);
+			setErrorMessage(error.response.data.message);
+		}
 	};
 
 	const fetchTodoById = async (id) => {
 		console.log("the id is ", id);
-    const response = await axios.get(`${TODOS_API}/${id}`);
-    const todo = response.data;
-    // Assuming the API returns a single todo object
-    if (todo) {
-        setId(todo.id);
-        setTitle(todo.title);
-    }
+		const response = await axios.get(`${TODOS_API}/${id}`);
+		const todo = response.data;
+		// Assuming the API returns a single todo object
+		if (todo) {
+			setId(todo.id);
+			setTitle(todo.title);
+		}
 	};
 
 	return (
 		<div>
 			<h2>Working With Arrays</h2>
 			<h4>Todos from server</h4>
+
+
 			<button
 				onClick={createTodo}
 				className="btn btn-primary ">
@@ -79,7 +93,7 @@ function WorkingWithArrays() {
 			</button>
 			<button
 				onClick={postTodo}
-				className="btn btn-primary ">
+				className="btn btn-warning ">
 				Post Todo
 			</button>
 
@@ -88,6 +102,9 @@ function WorkingWithArrays() {
 				className="btn btn-success ">
 				Update Todo
 			</button>
+			{errorMessage && (
+				<div className="alert alert-danger mb-2 mt-2">{errorMessage}</div>
+			)}
 			<input
 				onChange={(e) => setId(e.target.value)}
 				className="form-control"

@@ -34,18 +34,16 @@ function ModuleList() {
 		const status = await client.deleteModule(moduleId);
 		setModules(modules.filter((module) => module._id !== moduleId));
 	}
+
 	const updateModule = async () => {
-		const status = await client.updateModule(module._id, module);
-		setModules(
-			modules.map((m) => {
-				if (m._id === module._id) {
-					return module;
-				} else {
-					return m;
-				}
-			})
-		);
-	}
+		try {
+			await client.updateModule(module._id, module);
+			setModules(modules.map((m) => (m._id === module._id ? module : m)));
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 
 	// const [modules, setModules] = useState(db.modules);
 	// const [module, setModule] = useState({
@@ -111,7 +109,9 @@ function ModuleList() {
 					className="form-control"
 					placeholder="Module Description"
 					value={module.description}
-					onChange={(e) => setModule({ ...module, description: e.target.value })}
+					onChange={(e) =>
+						setModule({ ...module, description: e.target.value })
+					}
 				/>
 			</li>
 
@@ -124,14 +124,13 @@ function ModuleList() {
 						<button
 							className="btn btn-success float-end"
 							style={{ marginLeft: "5px" }}
-							onClick={() => dispatch(setModule(module))}>
+							onClick={() => setModule(module)}>
 							Edit
 						</button>
-						
 
 						<button
 							className="btn btn-danger float-end"
-							onClick={deleteModule}>
+							onClick={() => deleteModule(module._id)}>
 							Delete
 						</button>
 

@@ -21,6 +21,7 @@ function CourseRoutes(app) {
 		res.json(newCourse);
 	});
 
+	// update course
 	app.put("/api/courses/:id", (req, res) => {
 		const { id } = req.params;
 		const index = Database.courses.findIndex((course) => course._id === id);

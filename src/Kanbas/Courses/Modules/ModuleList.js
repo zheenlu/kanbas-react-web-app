@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -6,13 +6,47 @@ import {
 	deleteModule,
 	updateModule,
 	setModule,
+	setModules,
 } from "./modulesReducer";
+import * as client from "./client";
 
 function ModuleList() {
 	const { courseId } = useParams();
-	const modules = useSelector((state) => state.modulesReducer.modules);
-	const module = useSelector((state) => state.modulesReducer.module);
+	// const modules = useSelector((state) => state.modulesReducer.modules);
+	//const module = useSelector((state) => state.modulesReducer.module);
 	const dispatch = useDispatch();
+
+	const [modules, setModules] = useState([]);
+	const [module, setModule] = useState({});
+
+	const fetchModules = async () => {
+		const modules = await client.findModulesForCourse(courseId);
+		setModules(modules);
+	}
+	useEffect(() => {
+		fetchModules();
+	}, []);
+	const addModule = async () => {
+		const newModule = await client.addModule(courseId, module);
+		setModules([newModule, ...modules]);
+	}
+	const deleteModule = async (moduleId) => {
+		const status = await client.deleteModule(moduleId);
+		setModules(modules.filter((module) => module._id !== moduleId));
+	}
+	const updateModule = async () => {
+		const status = await client.updateModule(module._id, module);
+		setModules(
+			modules.map((m) => {
+				if (m._id === module._id) {
+					return module;
+				} else {
+					return m;
+				}
+			})
+		);
+	}
+
 	// const [modules, setModules] = useState(db.modules);
 	// const [module, setModule] = useState({
 	// 	name: "New Module",
@@ -43,31 +77,41 @@ function ModuleList() {
 	return (
 		<ul className="list-group">
 			<li className="list-group-item">
-				<button
+				{/* <button
 					className="btn btn-success float-end"
 					style={{ marginLeft: "5px" }}
 					onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
 					Add
-				</button>
+				</button> */}
 				<button
+					className="btn btn-success float-end"
+					style={{ marginLeft: "5px" }}
+					onClick={addModule}>
+					Add
+				</button>
+				{/* <button
 					className="btn btn-primary float-end"
 					style={{ marginTop: "0px" }}
 					onClick={() => dispatch(updateModule(module))}>
+					Update
+				</button> */}
+				<button
+					className="btn btn-primary float-end"
+					style={{ marginTop: "0px" }}
+					onClick={updateModule}>
 					Update
 				</button>
 				<input
 					className="form-control"
 					value={module.name}
-					onChange={(e) =>
-						dispatch(setModule({ ...module, name: e.target.value }))
-					}
+					placeholder="Module Name"
+					onChange={(e) => setModule({ ...module, name: e.target.value })}
 				/>
 				<textarea
 					className="form-control"
+					placeholder="Module Description"
 					value={module.description}
-					onChange={(e) =>
-						dispatch(setModule({ ...module, description: e.target.value }))
-					}
+					onChange={(e) => setModule({ ...module, description: e.target.value })}
 				/>
 			</li>
 
@@ -83,10 +127,11 @@ function ModuleList() {
 							onClick={() => dispatch(setModule(module))}>
 							Edit
 						</button>
+						
 
 						<button
 							className="btn btn-danger float-end"
-							onClick={() => dispatch(deleteModule(module._id))}>
+							onClick={deleteModule}>
 							Delete
 						</button>
 

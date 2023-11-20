@@ -109,10 +109,10 @@ function Lab5(app) {
 				return; // intermediately stop, if don't have it, the server will continue to send res.json(todos). Only One response be sent every time
     }
     res.json(todos);
-});
-app.get("/a5/todos", (req, res) => {
-	res.json(todos); // if the content type inside () is json file, you should use json() instead of send()
-});
+	});
+	app.get("/a5/todos", (req, res) => {
+		res.json(todos); // if the content type inside () is json file, you should use json() instead of send()
+	});
 
 	app.get("/a5/assignment/score/:newScore", (req, res) => {
 		const { newScore } = req.params;

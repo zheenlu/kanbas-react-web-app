@@ -9,10 +9,20 @@ import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import "./index.css";
+import { useState, useEffect } from "react";
+import * as client from "./client";
 
 function Courses({ courses }) {
 	const { courseId } = useParams();
-	const course = courses.find((course) => course._id === courseId);
+	//const course = courses.find((course) => course._id === courseId);
+	const [course, setCourse] = useState({});
+	const fetchCourseById = async () => {
+		const course = await client.fetchCourseById(courseId);
+		setCourse(course);
+	}
+	useEffect(() => {
+		fetchCourseById();
+	}, []);
 
 	return (
 		<div className="courses-main-div">

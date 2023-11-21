@@ -25,13 +25,13 @@ function ModuleList() {
 	}
 	useEffect(() => {
 		fetchModules();
-	}, []);
+	}, [fetchModules]);
 	const addModule = async () => {
 		const newModule = await client.addModule(courseId, module);
 		setModules([newModule, ...modules]);
 	}
 	const deleteModule = async (moduleId) => {
-		const status = await client.deleteModule(moduleId);
+		await client.deleteModule(moduleId);
 		setModules(modules.filter((module) => module._id !== moduleId));
 	}
 

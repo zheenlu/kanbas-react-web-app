@@ -22,7 +22,7 @@ function Courses({ courses }) {
 	}
 	useEffect(() => {
 		fetchCourseById();
-	}, []); // This will run only on component mount and unmount
+	}); 
 	
 
 	return (

@@ -25,7 +25,7 @@ function ModuleList() {
 	}
 	useEffect(() => {
 		fetchModules();
-	}, []);
+	});
 	const addModule = async () => {
 		const newModule = await client.addModule(courseId, module);
 		setModules([newModule, ...modules]);

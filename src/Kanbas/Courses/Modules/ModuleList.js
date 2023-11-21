@@ -19,13 +19,17 @@ function ModuleList() {
 	const [modules, setModules] = useState([]);
 	const [module, setModule] = useState({});
 
-	const fetchModules = async () => {
-		const modules = await client.findModulesForCourse(courseId);
-		setModules(modules);
-	}
+	// const fetchModules = async () => {
+	// 	const modules = await client.findModulesForCourse(courseId);
+	// 	setModules(modules);
+	// }
 	useEffect(() => {
+		const fetchModules = async () => {
+			const modules = await client.findModulesForCourse(courseId);
+			setModules(modules);
+		}
 		fetchModules();
-	}, [fetchModules]);
+	}, []);
 	const addModule = async () => {
 		const newModule = await client.addModule(courseId, module);
 		setModules([newModule, ...modules]);

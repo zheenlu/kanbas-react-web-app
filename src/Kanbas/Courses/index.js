@@ -16,13 +16,17 @@ function Courses({ courses }) {
 	const { courseId } = useParams();
 	//const course = courses.find((course) => course._id === courseId);
 	const [course, setCourse] = useState({});
-	const fetchCourseById = async () => {
-		const course = await client.fetchCourseById(courseId);
-		setCourse(course);
-	}
+	// const fetchCourseById = async () => {
+	// 	const course = await client.fetchCourseById(courseId);
+	// 	setCourse(course);
+	// }
 	useEffect(() => {
+		const fetchCourseById = async () => {
+			const course = await client.fetchCourseById(courseId);
+			setCourse(course);
+		}
 		fetchCourseById();
-	}, [fetchCourseById]); // This will run only on component mount and unmount
+	}, []); // This will run only on component mount and unmount
 	
 
 	return (

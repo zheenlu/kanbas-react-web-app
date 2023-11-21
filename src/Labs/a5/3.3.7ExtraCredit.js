@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function ExtraCredit2() {
-	const [id, setId] = useState(1);
+	const [id] = useState(1);
 	const [description, setDescription] = useState("");
 	const [completed, setCompleted] = useState();
 

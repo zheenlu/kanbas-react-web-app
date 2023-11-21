@@ -53,7 +53,7 @@ function Lab5(app) {
 		res.json(todos);
 	});
 
-	// rhis is lab5
+	// rhis is lab5fsfgergerfsfeasger
   app.get("/a5/todos/:id/delete", (req, res) => {
 		const { id } = req.params;
 		const index = todos.findIndex((todo) => todo.id === parseInt(id));

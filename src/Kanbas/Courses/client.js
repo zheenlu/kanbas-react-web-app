@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const URL = "http://localhost:4000/api/courses";
+const API_BASE = process.env.REACT_APP_API_BASE;
+const URL = `${API_BASE}/courses`;
 
 //use fetchCourses function to get the data from the server instead of from database on the client side
 export const findAllCourses = async () => {

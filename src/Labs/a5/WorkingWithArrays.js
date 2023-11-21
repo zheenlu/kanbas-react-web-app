@@ -9,14 +9,14 @@ function WorkingWithArrays() {
 
 	const TODOS_API = "http://localhost:4000/a5/todos";
 
-	const getTodosPromise = () => {
-		//older syntax
-		const promise = axios.get("http://localhost:4000/a5/todos");
-		promise.then((response) => {
-			console.log(response.data);
-			setTodos(response.data);
-		});
-	};
+	// const getTodosPromise = () => {
+	// 	//older syntax
+	// 	const promise = axios.get("http://localhost:4000/a5/todos");
+	// 	promise.then((response) => {
+	// 		console.log(response.data);
+	// 		setTodos(response.data);
+	// 	});
+	// };
 
 	const getTodoesAsync = async () => {
 		//newer syntax
@@ -42,10 +42,10 @@ function WorkingWithArrays() {
 		setTodos(response.data);
 	};
 
-	const removeTodo = async (id) => {
-		const response = await axios.get(`${TODOS_API}/${id}/delete`);
-		setTodos(response.data);
-	};
+	// const removeTodo = async (id) => {
+	// 	const response = await axios.get(`${TODOS_API}/${id}/delete`);
+	// 	setTodos(response.data);
+	// };
 	//using delete
 	const deleteTodo = async (id) => {
 		try {

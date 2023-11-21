@@ -22,7 +22,8 @@ function Courses({ courses }) {
 	}
 	useEffect(() => {
 		fetchCourseById();
-	}, []);
+	}, []); // This will run only on component mount and unmount
+	
 
 	return (
 		<div className="courses-main-div">

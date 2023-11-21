@@ -13,7 +13,7 @@ import "./index.css";
 import { useState, useEffect } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
-import axios from "axios";
+// import axios from "axios";
 // import {findAllCourses} from "../Courses/client";
 import * as client from "./Courses/client";
 
@@ -23,7 +23,7 @@ function Kanbas() {
 
 	// a5 updates
 	const [courses, setCourses] = useState([]);
-	const URL = "http://localhost:4000/api/courses";
+	// const URL = "http://localhost:4000/api/courses";
 
 	//use fetchCourses function to get the data from the server instead of from database on the client side
 	const findAllCourses = async () => {

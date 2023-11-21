@@ -13,12 +13,12 @@ function Dashboard({
 }) {
 	console.log(typeof addCourse); // Should log 'function' if addCourse is correctly passed
 
-	const editCard = (courseId) => {
-		const selectedCourse = courses.find((c) => c._id === courseId);
-		if (selectedCourse) {
-			setCourse(selectedCourse);
-		}
-	};
+	// const editCard = (courseId) => {
+	// 	const selectedCourse = courses.find((c) => c._id === courseId);
+	// 	if (selectedCourse) {
+	// 		setCourse(selectedCourse);
+	// 	}
+	// };
 
 	return (
 		<div className="dashboard-container">

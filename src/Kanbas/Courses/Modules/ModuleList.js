@@ -1,20 +1,20 @@
 import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import {
-	addModule,
-	deleteModule,
-	updateModule,
-	setModule,
-	setModules,
-} from "./modulesReducer";
+// import { useSelector, useDispatch } from "react-redux";
+// import {
+// 	addModule,
+// 	deleteModule,
+// 	updateModule,
+// 	setModule,
+// 	setModules,
+// } from "./modulesReducer";
 import * as client from "./client";
 
 function ModuleList() {
 	const { courseId } = useParams();
 	// const modules = useSelector((state) => state.modulesReducer.modules);
 	//const module = useSelector((state) => state.modulesReducer.module);
-	const dispatch = useDispatch();
+	// const dispatch = useDispatch();
 
 	const [modules, setModules] = useState([]);
 	const [module, setModule] = useState({});

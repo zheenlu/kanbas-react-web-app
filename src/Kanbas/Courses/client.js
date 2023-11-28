@@ -25,7 +25,7 @@ export const updateCourse = async (course) => {
     course
   );
   return response.data;
-}
+};
 export const addCourse = async (course) => {
   console.log("clicked on the addCourse");
   // use "post" to add a new course to the server, see inside (URL, course), we're sending course to the server

@@ -1,0 +1,9 @@
+.main-div {
+  margin-left: 15px; 
+  display: flex;
+}
+
+.fixed-navigation {
+  position: fixed;
+  z-index: 100; /* To ensure it's above other content */
+}

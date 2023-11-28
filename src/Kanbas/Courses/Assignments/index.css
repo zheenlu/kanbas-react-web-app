@@ -1,0 +1,10 @@
+.wd-courses-assignments a {
+  margin-top: 15px;
+  background-color: #f5f5f5;
+  border: 1px solid #c7cdd1;
+  padding: 12px 6px;
+  color: var(--ic-brand-font-color-dark);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}

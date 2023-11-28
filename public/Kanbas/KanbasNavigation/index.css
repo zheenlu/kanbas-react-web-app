@@ -1,0 +1,33 @@
+.wd-kanbas-navigation {
+  background-color: black;
+  list-style: none; /*turn off the list bullets*/
+  padding: 0px; /*turn off the default padding*/ 
+  width: 80px;
+}
+.wd-kanbas-navigation li {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 0.8em;
+  text-align: center;
+}
+.wd-kanbas-navigation li.wd-active {
+  background-color: white;
+}
+.wd-kanbas-navigation li.wd-black-white i {
+  color: white;
+}
+.wd-kanbas-navigation li.wd-active a {
+  color: red;
+}
+
+.wd-kanbas-navigation li a {
+  color: white;
+  text-decoration: none; /*turn off link underline*/
+}
+
+.wd-kanbas-navigation li a i {
+  color: red;
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+

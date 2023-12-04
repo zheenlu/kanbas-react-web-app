@@ -23,7 +23,6 @@ export const updateCourse = async (course) => {
   const response = await axios.put(
     `${URL}/${course._id}`,
     course
-    //blablabal
   );
   return response.data;
 };

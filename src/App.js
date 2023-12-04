@@ -6,6 +6,8 @@ import HellowWord from "./Labs/a3/HelloWorld";
 import { HashRouter } from "react-router-dom";
 import { Route, Routes, Navigate } from "react-router-dom";
 import React from "react";
+import Project from "./project";
+
 
 function App() {
 	return (
@@ -22,6 +24,11 @@ function App() {
 						path="/"
 						element={<Navigate to="/Kanbas" />}
 					/>
+					<Route
+						path="/project/*"
+						element={<Project />}
+					/>
+
 					{/** default: navigate to labs*/}
 					<Route
 						path="/Hello"
@@ -36,7 +43,6 @@ function App() {
 						path="/Kanbas/*"
 						element={<Kanbas />}
 					/>
-					
 				</Routes>
 			</div>
 		</HashRouter>

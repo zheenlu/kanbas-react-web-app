@@ -54,6 +54,6 @@ function ModuleRoutes(app) {
 			...req.body,
 		};
 		res.json(200);
-	});
+	});//fshfuhof
 }
 export default ModuleRoutes;

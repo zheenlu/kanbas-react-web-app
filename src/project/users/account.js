@@ -17,7 +17,8 @@ function Account() {
 		} else {
 			fetchAccount();
 		}
-	}, []);
+	}, [id]); // Include `id` in the dependency array
+	
 
 	const fetchAccount = async () => {
 		const account = await client.account();

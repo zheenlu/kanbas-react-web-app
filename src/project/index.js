@@ -8,8 +8,8 @@ import Account from "./users/account";
 import UserTable from "./users/table";
 
 
-import Search from "./search";
-import Details from "./details";
+// import Search from "./search";
+// import Details from "./details";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Nav from "./nav";
 
@@ -33,9 +33,9 @@ function Project() {
             <Route path="/signin" element={<Signin />} />
             {/* <Route path="/courses" element={<CourseList />} />
             <Route path="/courses/:cid" element={<CourseDetails />} /> */}
-            <Route path="/search" element={<Search />} />
-            <Route path="/search/:search" element={<Search />} />
-            <Route path="/details/:id" element={<Details />} />
+            {/* <Route path="/search" element={<Search />} /> */}
+            {/* <Route path="/search/:search" element={<Search />} /> */}
+            {/* <Route path="/details/:id" element={<Details />} /> */}
           </Routes>
         </div>
       </div>

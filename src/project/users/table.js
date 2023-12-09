@@ -10,13 +10,6 @@ import * as client from "./client";
 
 function UserTable() {
 	const [users, setUsers] = useState([]);
-	const fetchUsers = async () => {
-		const users = await client.findAllUsers();
-		setUsers(users);
-	};
-	useEffect(() => {
-		fetchUsers();
-	}, []);
 	const [user, setUser] = useState({
 		username: "",
 		password: "",
@@ -55,6 +48,13 @@ function UserTable() {
 			console.log(err);
 		}
 	};
+	const fetchUsers = async () => {
+		const users = await client.findAllUsers();
+		setUsers(users);
+	};
+	useEffect(() => {
+		fetchUsers();
+	}, []);
 
 	return (
 		<div>

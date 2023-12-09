@@ -22,7 +22,7 @@ function Signup() {
 			{error && <div>{error}</div>}
 			<input
 				className="form-control w-50"
-        placeholder="username"
+        		placeholder="username"
 				value={credentials.username}
 				onChange={(e) =>
 					setCredentials({
@@ -33,7 +33,7 @@ function Signup() {
 			/>
 			<input
 				className="form-control w-50"
-        placeholder="password"
+        		placeholder="password"
 				value={credentials.password}
 				onChange={(e) =>
 					setCredentials({
